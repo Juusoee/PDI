@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>pdi_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix/>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-01 18:32:00</sys_created_on>
+        <sys_id>b9dcd7a797251110fa32f8b3f153afbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pdi_user</sys_name>
+        <sys_package display_value="">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sys_user_role_b9dcd7a797251110fa32f8b3f153afbe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-01 18:32:00</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>sys_user_role_b9dcd7a797251110fa32f8b3f153afbe</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>pdi_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix/><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-09-01 18:32:00</sys_created_on><sys_id>b9dcd7a797251110fa32f8b3f153afbe</sys_id><sys_mod_count>0</sys_mod_count><sys_name>pdi_user</sys_name><sys_package display_value="">7ddcdf2797251110fa32f8b3f153af60</sys_package><sys_policy/><sys_scope display_value="">7ddcdf2797251110fa32f8b3f153af60</sys_scope><sys_update_name>sys_user_role_b9dcd7a797251110fa32f8b3f153afbe</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-09-01 18:32:00</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-1741675192</payload_hash>
+        <record_name>pdi_user</record_name>
+        <reverted_from/>
+        <source>72b5eff775b011108c8b143dd0c59f1d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-01 18:32:00</sys_created_on>
+        <sys_id>71dcd7a797251110fa32f8b3f153afc2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>182fa5303010000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-01 18:32:00</sys_updated_on>
+        <type>Role</type>
+        <update_guid>b9dcd7a7ec251110724330b0faf883c1</update_guid>
+        <update_guid_history>b9dcd7a7ec251110724330b0faf883c1:-1741675192</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="pdi_user">1fefdb6b97251110fa32f8b3f153affe</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-01 18:45:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>76d3cc0fcef8493ea5d27e6a4e3cec81</sys_id>
+        <sys_metadata>b9dcd7a797251110fa32f8b3f153afbe</sys_metadata>
+        <sys_name>pdi_user</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>sys_user_role_b9dcd7a797251110fa32f8b3f153afbe</sys_update_name>
+        <sys_update_version display_value="sys_user_role_b9dcd7a797251110fa32f8b3f153afbe">71dcd7a797251110fa32f8b3f153afc2</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
