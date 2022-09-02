@@ -9,7 +9,7 @@
         <icon/>
         <kb_knowledge_base/>
         <kb_knowledge_page/>
-        <login_page/>
+        <login_page display_value="pdi_login">c7bfdb3b97211110fa32f8b3f153af8d</login_page>
         <logo/>
         <notfound_page/>
         <quick_start_config/>
