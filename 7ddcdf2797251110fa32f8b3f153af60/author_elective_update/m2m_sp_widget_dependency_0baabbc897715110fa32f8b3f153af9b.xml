@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="bootstrap.min.css">579abf8897715110fa32f8b3f153af68</sp_dependency>
+        <sp_widget display_value="pdi_spa">07343f0097715110fa32f8b3f153af1a</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:59:18</sys_created_on>
+        <sys_id>0baabbc897715110fa32f8b3f153af9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>bootstrap.min.css.pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_0baabbc897715110fa32f8b3f153af9b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:59:18</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>m2m_sp_widget_dependency_0baabbc897715110fa32f8b3f153af9b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="bootstrap.min.css">579abf8897715110fa32f8b3f153af68</sp_dependency><sp_widget display_value="pdi_spa">07343f0097715110fa32f8b3f153af1a</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-09-03 09:59:18</sys_created_on><sys_id>0baabbc897715110fa32f8b3f153af9b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>bootstrap.min.css.pdi_spa</sys_name><sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package><sys_policy/><sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope><sys_update_name>m2m_sp_widget_dependency_0baabbc897715110fa32f8b3f153af9b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-09-03 09:59:18</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>-121181255</payload_hash>
+        <record_name>bootstrap.min.css.pdi_spa</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:59:18</sys_created_on>
+        <sys_id>4baabbc897715110fa32f8b3f153af9d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18302ca57330000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:59:18</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>83aabbc8ac71511029d305955f0a4c9d</update_guid>
+        <update_guid_history>83aabbc8ac71511029d305955f0a4c9d:-121181255</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="bootstrap.min.css.pdi_spa">d75bb70c97715110fa32f8b3f153af98</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 10:02:19</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>6bdbfa2a231845ee9bf3f82afc330a04</sys_id>
+        <sys_metadata>0baabbc897715110fa32f8b3f153af9b</sys_metadata>
+        <sys_name>bootstrap.min.css.pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_0baabbc897715110fa32f8b3f153af9b</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_0baabbc897715110fa32f8b3f153af9b">4baabbc897715110fa32f8b3f153af9d</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
