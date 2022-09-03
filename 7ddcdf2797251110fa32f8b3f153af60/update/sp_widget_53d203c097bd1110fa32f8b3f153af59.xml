@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $timeout) {
+	var c = this;
+	
+	$scope.$on("$$uiNotification", function(evt, $$uiNotification) {
+		evt.preventDefault();
+		if (evt.stopPropagation)
+			evt.stopPropagation();
+		addUiNotification($$uiNotification);
+	});
+	
+	var notificationAutoDismissTimeout;
+	function addUiNotification($$uiNotification) {
+		if (angular.isArray($$uiNotification) && !$$uiNotification.length)
+			return;
+
+		if (angular.isArray($$uiNotification) && $$uiNotification.length > 0)
+			c.$$uiNotification = $$uiNotification;
+		else {
+			if (!angular.isArray($scope.$$uiNotification))
+				c.$$uiNotification = [];
+
+			c.$$uiNotification.push($$uiNotification);
+		}
+
+		$timeout.cancel(notificationAutoDismissTimeout);
+		var seconds = (typeof g_notif_timeout !== "undefined") ? g_notif_timeout : 5;
+		if (c.$$uiNotification.length == 1 && c.$$uiNotification[0].type == 'trivial')
+			seconds = 2;
+
+		notificationAutoDismissTimeout = $timeout(function(){
+			if (seconds > 0 && typeof g_accessibility !== "undefined" && g_accessibility == "false")
+				c.dismissNotifications();
+		}, seconds * 1000);
+	}
+	
+	c.dismissNotifications = function() {
+		angular.forEach(c.$$uiNotification, function(notification){
+			notification.visible = false;
+		});
+		$timeout(function(){
+			c.$$uiNotification = {};
+		}, 20);
+	}
+
+	c.revealNotification = function($$uiNotification){
+		$timeout(function(){
+			$$uiNotification.visible = true;
+		}, 20);
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	// End notification handling
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+    font-family: 'Varela Round', sans-serif;
+}
+.modal-confirm {		
+    color: #636363;
+    width: 325px;
+    margin: 30px auto;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;   
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+    min-height: 40px;
+    border-radius: 3px; 
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}	
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+}	
+.modal-confirm .icon-box {
+    color: #fff;		
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #82ce34;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+    font-size: 58px;
+    position: relative;
+    top: 3px;
+}
+.modal-confirm.modal-dialog {
+    margin-top: 80px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #82ce34;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+    background: #6fb32b;
+    outline: none;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_modal</id>
+        <internal>false</internal>
+        <link><![CDATA[function(scope, element, attrs, ctrl){
+	if (!scope.data)
+		return;
+	var $rootScope = $injector.get('$rootScope');
+	var $uibModal = $injector.get('$uibModal');
+	var $uibModalStack = $injector.get('$uibModalStack');
+	var pageRoot = angular.element('.sp-page-root');
+
+	var opts = {
+		size : scope.options.size || 'lg',
+		scope: $rootScope.$new(false, scope),
+		template : element,
+		backdrop: scope.options.backdrop || true,
+		keyboard: scope.options.keyboard != undefined ? scope.options.keyboard : true,
+		controller : function($scope, $uibModalInstance){
+			$scope.instance = scope.data.instance;
+			$scope.$on('modal.closing', function() {
+				pageRoot.attr('aria-hidden', 'false');
+			});
+		}
+	};
+
+	var label = scope.options.modalLabel || scope.data.instance.name;
+	var labelledby = scope.options.modalLabelledby;
+	var widgetId = scope.widget.sys_id;
+
+	if (scope.options.modalBodyClass)
+		element.addClass(scope.options.modalBodyClass);
+
+	if (scope.options.beforeRender)
+		scope.options.beforeRender.call(null, scope.data.instance.data);
+
+	var modalInstance = $uibModal.open(opts);
+
+	if (scope.options.afterOpen)
+		scope.options.afterOpen.call(null, modalController(modalInstance));
+
+	if (scope.options.afterClose)
+		modalInstance.closed.then(scope.options.afterClose);
+
+	modalInstance.closed.then(function(){
+		scope.$emit('sp.widget-modal.closed');
+	});
+
+	function setModalAriaLabel(label) {
+		var modalObj = $uibModalStack.getTop();
+		var modal = modalObj.value.modalDomEl;
+		modal.attr('aria-label', label);
+		scope.modalLabel = label;
+	}
+	function setModalAriaAttrs() {
+		var modalObj = $uibModalStack.getTop();
+		var modal = modalObj.value.modalDomEl;
+		if (labelledby)
+			modal.attr('aria-labelledby', labelledby);
+
+		modal.attr('aria-modal', 'true');
+	}
+
+	modalInstance.rendered.then(function() {
+		if (!scope.modalLabel)
+			setModalAriaLabel(label);
+
+		setModalAriaAttrs();
+		pageRoot.attr('aria-hidden', 'true');
+	});
+	scope.$on('sp.widget-modal.set-aria-label', function(evt, label) {
+		setModalAriaLabel(label);
+	});
+
+	scope.$on('sp.widget-modal.clear-focus-cache', function(evt) {
+		$uibModalStack.clearFocusListCache();
+	});
+
+	function modalController(instance){
+		return {
+			close: function(){
+				instance.close();
+			}
+		};
+	}
+
+}]]></link>
+        <name>PDI-modal</name>
+        <option_schema>[{"name":"embeddedWidgetId","section":"Data","label":"Embedded Widget Id","type":"string"},{"name":"embeddedWidgetOptions","default_value":"","section":"Data","label":"Embedded Widget Options","type":"string"},{"name":"modalBodyClass","section":"Data","label":"Optional Class name for modal body","type":"string"},{"name":"beforeRender","section":"Data","label":"Before modal render Callback called with embedded widget data object","type":"string"},{"name":"afterClose","section":"Data","label":"After modal close Callback","type":"string"},{"name":"afterOpen","section":"Data","label":"After modal open Callback called with modal controller","type":"string"},{"name":"modalLabel","section":"Data","label":"Optional aria-label for the modal. Otherwise the modal will use the widget's name as the aria-label","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[// populate the 'data' object
+// e.g., data.table = $sp.getValue('table');
+(function(){
+	var id = options.embeddedWidgetId || input.embeddedWidgetId;
+	var opt = options.embeddedWidgetOptions || input.embeddedWidgetOptions;
+	// if the modal initialization paramets not available in options, fetch from input.
+	if (!options.backdrop && input.backdrop)
+		options.backdrop = input.backdrop;
+	if (!options.keyboard && input.keyboard != undefined)
+		options.keyboard = input.keyboard;
+	if (!options.size && input.size)
+		options.size = input.size;
+	if (!options.modalLabel && input.modalLabel)
+		options.modalLabel = input.modalLabel;
+
+	data.instance = $sp.getWidget(id, opt);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 05:55:29</sys_created_on>
+        <sys_id>53d203c097bd1110fa32f8b3f153af59</sys_id>
+        <sys_name>PDI-modal</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_53d203c097bd1110fa32f8b3f153af59</sys_update_name>
+        <template><![CDATA[<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">Awesome!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>     
+]]></template>
+    </sp_widget>
+</record_update>

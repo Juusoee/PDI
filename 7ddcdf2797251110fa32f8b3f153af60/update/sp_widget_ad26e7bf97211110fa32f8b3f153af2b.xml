@@ -182,11 +182,19 @@
 		input.fname = c.fname;
 		input.lname = c.lname;
 		input.email = c.email;
-		c.server.get(input).then(function (r) {
-		//Logging purposes 
-		});
+		c.server.get(input).then(function (r) {});
 	};
-
+	$scope.confirmModal = function () {
+		var email = document.getElementById("email").value;
+		if (email != "" && email.includes("@")) {
+			$("#myModal").modal("toggle");
+			$("#reload").click(function () {
+				setTimeout(function () {
+					location.reload();
+				}, 500);
+			});
+		}
+	};
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -663,6 +671,67 @@ input {
 .social{
   color: #88BBD6;
 }
+
+// MODAL
+
+.modal-confirm {		
+  color: #636363;
+  width: 325px;
+  margin: 30px auto;
+}
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-confirm .modal-header {
+  border-bottom: none;   
+      position: relative;
+}
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+  min-height: 40px;
+  border-radius: 3px; 
+}
+.modal-confirm .close {
+      position: absolute;
+  top: -5px;
+  right: -5px;
+}	
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 13px;
+}	
+.modal-confirm .icon-box {
+  color: #fff;		
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -70px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: #88BBD6;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+  font-size: 58px;
+  position: relative;
+  top: 3px;
+}
+.modal-confirm.modal-dialog {
+  margin-top: 80px;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -797,6 +866,7 @@ input {
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
         <sys_update_name>sp_widget_ad26e7bf97211110fa32f8b3f153af2b</sys_update_name>
         <template><![CDATA[
+  
 <div class="container" id="container">
   <div class="form-container sign-up-container">
     
@@ -811,7 +881,7 @@ input {
       <input name="fname" id="fname" ng-model="c.fname" type="text"  placeholder="First name" />
       <input id="lname" ng-model="c.lname" placeholder="Last name" />
       <input id="email" ng-model="c.email" ng-required="true" type="email" placeholder="Email" />
-      <button ng-click=submitForm() >Sign Up</button>
+      <button ng-click="submitForm(); confirmModal()">Sign Up</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -1056,7 +1126,28 @@ input {
           Don't have account yet? Sign up now! Enter your personal details and
           start journey with us
         </p>
-        <button class="ghost" ng-click="signUp()" data-toggle="modal" data-target="#exampleModalCenter">Sign Up</button>
+        <button class="ghost" ng-click="signUp()">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade" data-backdrop="false">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="icon-box">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>				
+        <h4 class="modal-title">Awesome!</h4>	
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Thank you for signing up! We just need to verify your email address before you can access customer portal. Check your email to verify your email address.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success btn-block" data-dismiss="modal" id="reload">OK</button>
       </div>
     </div>
   </div>
