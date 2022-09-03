@@ -33,6 +33,7 @@
         <title>PDI-Portal</title>
         <ts_index_group/>
         <url_suffix>pdi</url_suffix>
+        <user_registration_config display_value="pdi_external">89911cc897f11110fa32f8b3f153afc8</user_registration_config>
     </sp_portal>
     <sys_translated_text action="delete_multiple" query="documentkey=afd32feb97251110fa32f8b3f153af1d"/>
 </record_update>

@@ -165,8 +165,10 @@
 			? "Password shown"
 			: "Password hidden";
 	};
+
+	// Function for Sign up and Sign in transition
+	// Function Calls CSS onClick
 	$scope.signUp = function () {
-		console.log('asd')
 		var container = document.getElementById("container");
 		container.classList.add("right-panel-active");
 	};
@@ -174,6 +176,17 @@
 		var container = document.getElementById("container");
 		container.classList.remove("right-panel-active");
 	};
+	$scope.submitForm = function () {
+		var input = {};
+		input.action = "getAccess";
+		input.fname = c.fname;
+		input.lname = c.lname;
+		input.email = c.email;
+		c.server.get(input).then(function (r) {
+		//Logging purposes 
+		});
+	};
+
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -649,7 +662,8 @@ input {
 }
 .social{
   color: #88BBD6;
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -664,6 +678,20 @@ input {
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+
+    if(input.action == "getAccess"){
+        var access = new GlideRecord('u_user_reg_req_122223')
+        access.initialize();
+        access.status = 'pending'
+        access.portal = 'afd32feb97251110fa32f8b3f153af1d'
+        access.user_registration_config = '89911cc897f11110fa32f8b3f153afc8'
+        access.first_name = input.fname;
+        access.last_name = input.lname;
+        access.email = input.email;
+        access.insert();
+    
+    }
+
     options.show_panel = options.show_panel == "true" || options.show_panel == true;
 
     if (input && input.action === "multi_factor_auth_setup") {
@@ -755,6 +783,8 @@ input {
 		if(GlideStringUtil.notNil(idp))
 			data.default_idp = idp;
     }
+
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -766,9 +796,11 @@ input {
         <sys_policy/>
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
         <sys_update_name>sp_widget_ad26e7bf97211110fa32f8b3f153af2b</sys_update_name>
-        <template><![CDATA[<div class="container" id="container">
+        <template><![CDATA[
+<div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
+    
+    <form>
       <h1>Create Account</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fa fa-facebook"></i></a>
@@ -776,10 +808,10 @@ input {
         <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
       </div>
       <span>or use your email for registration</span>
-      <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Sign Up</button>
+      <input name="fname" id="fname" ng-model="c.fname" type="text"  placeholder="First name" />
+      <input id="lname" ng-model="c.lname" placeholder="Last name" />
+      <input id="email" ng-model="c.email" ng-required="true" type="email" placeholder="Email" />
+      <button ng-click=submitForm() >Sign Up</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -990,6 +1022,7 @@ input {
           </div>
         </div>
       </form>
+      <!--
       <div
         class="sp-self-registration forgot-pwd-link"
         ng-if="::c.data.self_registration_record_producer"
@@ -1000,11 +1033,16 @@ input {
           >{{::c.data.self_registration_label}}</a
         >
       </div>
+      -->
     </div>
   </div>
+
   <div class="overlay-container">
+    
     <div class="overlay">
+      
       <div class="overlay-panel overlay-left">
+        
         <h1>Welcome Back!</h1>
         <p>
           If you already have an account please click on the sign in, to keep
@@ -1018,7 +1056,7 @@ input {
           Don't have account yet? Sign up now! Enter your personal details and
           start journey with us
         </p>
-        <button class="ghost" ng-click=signUp()>Sign Up</button>
+        <button class="ghost" ng-click="signUp()" data-toggle="modal" data-target="#exampleModalCenter">Sign Up</button>
       </div>
     </div>
   </div>
