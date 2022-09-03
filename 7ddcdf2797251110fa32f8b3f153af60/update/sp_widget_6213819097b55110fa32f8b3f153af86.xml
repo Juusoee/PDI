@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.transclude:last-child {
+  padding-bottom: 10px;
+}
+
+.list-group {
+ 	margin-bottom: 0px; 
+}
+
+.list-group-item {
+    padding: 0;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+
+.list-group-item:last-child {
+	margin-bottom: 10px;
+}
+
+li{
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+  margin-bottom: 10px !important
+}
+a{
+text-decoration: none !important;
+}
+a:hover{
+  text-decoration: none !important;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,color</field_list>
+        <has_preview>false</has_preview>
+        <id>pdi_kb_most_viewed</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>pdi_kb_most_viewed</name>
+        <option_schema>[{"name":"max_number","section":"Presentation","label":"Max number","type":"integer"},{"displayValue":"Knowledge Category","name":"kb_category","section":"Data","label":"KB category","type":"reference","value":"kb_category","ed":{"reference":"kb_category"}}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.articles = [];
+	options.title = options.title || gs.getMessage("Most Viewed Articles");
+	
+	var z;
+	var knowledge_bases;
+	var sys_id = $sp.getParameter('sys_id');
+	var kb_id = $sp.getParameter('kb_id');
+	var gr = new GlideRecord("kb_knowledge");
+	
+	var foundArticle = false;
+	if (sys_id) { // sys_id specified, try to find an article by sys_id or number
+		gr.addQuery("sys_id", sys_id).addOrCondition("number", sys_id);
+		gr.query();
+		if (gr.next() && gr.canRead()) {
+			// When sys_id matches a kb_record, get KB of the article
+			knowledge_bases = String(gr.getValue('kb_knowledge_base'));
+			foundArticle = true;
+		}
+	}
+	
+	if (!foundArticle) { /* For all other pages this code will get executed. Used on knowledge home page.*/
+		/*If KB is selected display most viewed articles only from that KB*/
+		if (kb_id != null)
+			knowledge_bases = String(kb_id);
+		else {
+			 /*Get all knowledge bases associated with Portal*/
+			knowledge_bases = String($sp.getKnowledgeBases());
+		}
+	}
+	
+	if (GlideStringUtil.notNil(knowledge_bases))
+		z = $sp.getAllKBRecords(knowledge_bases);
+	else //If there are no accessible KBs for logged in user
+		return;
+	
+	z.addQuery("sys_view_count", ">", "0");
+	if (options.kb_category)
+		z.addQuery("kb_category", options.kb_category);
+	z.orderByDesc('sys_view_count');
+	z.setLimit(options.max_number || 5);
+	z.query();
+	while (z.next()) {
+		if (!z.canRead())
+			continue;
+
+		var a = {};
+		$sp.getRecordValues(a, z, 'short_description,sys_view_count,sys_id,published');
+		data.articles.push(a);
+	}
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 15:15:45</sys_created_on>
+        <sys_id>6213819097b55110fa32f8b3f153af86</sys_id>
+        <sys_name>pdi_kb_most_viewed</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_6213819097b55110fa32f8b3f153af86</sys_update_name>
+        <template><![CDATA[<main>
+  <ol class="gradient-list" ng-if="data.articles.length > 0" >
+    <li ng-repeat="a in data.articles">
+      <a href="?id=kb_article&sys_id={{::a.sys_id}}">{{::a.short_description}}</a>
+    </li>
+  </ol>
+</main>]]></template>
+    </sp_widget>
+</record_update>
