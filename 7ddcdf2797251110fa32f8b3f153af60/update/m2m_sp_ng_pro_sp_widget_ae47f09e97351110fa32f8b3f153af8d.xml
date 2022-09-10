@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="scBasicSelect">e225f8b43b0523008ed00d8044efc4fe</sp_angular_provider>
+        <sp_widget display_value="pdi_sc_categories">2647f09e97351110fa32f8b3f153af8b</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-09 19:32:00</sys_created_on>
+        <sys_id>ae47f09e97351110fa32f8b3f153af8d</sys_id>
+        <sys_name>scBasicSelect.pdi_sc_categories</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_ae47f09e97351110fa32f8b3f153af8d</sys_update_name>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

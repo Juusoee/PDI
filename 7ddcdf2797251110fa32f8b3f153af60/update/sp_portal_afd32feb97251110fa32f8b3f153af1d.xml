@@ -29,7 +29,7 @@
         <sys_policy/>
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
         <sys_update_name>sp_portal_afd32feb97251110fa32f8b3f153af1d</sys_update_name>
-        <theme/>
+        <theme display_value="pdi-theme">cae97f8897715110fa32f8b3f153af73</theme>
         <title>PDI-Portal</title>
         <ts_index_group/>
         <url_suffix>pdi</url_suffix>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function ($scope) {
+	/* widget controller */
+	var c = this;
+
+	/**
+	 * Getters and setters
+	 */
+	var display = [];
+	var data = c.data.arrCatItem;
+	var useItemTemplate = document.querySelector("[data-item-template]");
+	var useItemDiv = document.querySelector("[data-item]");
+	var searchInput = document.querySelector("[data-search]");
+
+	/**
+	 * Event listener for input
+	 * Filters out items that not match input
+	 */
+
+	searchInput.addEventListener("input", function (e) {
+		var value = e.target.value.toLowerCase();
+		display.forEach(function (item) {
+			var isVisible = item.name.toLowerCase().includes(value) || item.shortDesc.toLowerCase().includes(value);
+			item.element.classList.toggle("hide", !isVisible);
+		});
+	});
+	/**
+	 * Handle promise, push object to array.
+	 */
+	data.forEach(function (item) {
+		var card = useItemTemplate.content.cloneNode(true).children[0];
+		var sys_id = card.querySelector("[data-sys_id]");
+		var name = card.querySelector("[data-name]");
+    var shortDesc = card.querySelector("[data-short_description]");
+		sys_id.textContent = item.sys_id;
+		name.textContent = item.name;
+    shortDesc.textContent = item.shortDesc;
+		useItemDiv.append(card);
+		display.push({ sys_id: item.sys_id, name: item.name, shortDesc: item.shortDesc, element: card });
+	});
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.card{
+    border: 1px solid black;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_search</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>pdi_search</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  data.arrCatItem = []
+  var gr = new GlideRecord('sc_cat_item')
+  gr.addQuery('active', 'true')
+  gr.query();
+  while(gr.next()){
+      data.arr.push({
+        "type": "sc_cat_item",
+        "sys_id": gr.getValue('sys_id'),
+        "name": gr.getValue('name'),
+        "shortDesc": gr.getValue('short_description')
+    })
+  }
+ 
+  var kb = new GlideRecord('kb_knowledge')
+  kb.addQuery('workflow_state', 'published');
+  kb.query();
+  while(kb.next()){
+    data.arr.push({
+      "type": "kb_knowledge",
+      "shortDesc": kb.getValue('short_description'),
+      "sys_id": kb.getValue('sys_id'),
+      "name": kb.getValue('number')
+    })
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-10 14:39:11</sys_created_on>
+        <sys_id>87dd7c2297355110fa32f8b3f153af02</sys_id>
+        <sys_name>pdi_search</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_87dd7c2297355110fa32f8b3f153af02</sys_update_name>
+        <template><![CDATA[<div>
+    <div class="search-wrapper">
+        <label for="search">Search</label>
+        <input type="search" id="search" data-search>
+    </div>
+    <div data-item>
+    <template data-item-template>
+        <div class="card">
+            <div class="header" data-name></div>
+            <div class="body" data-sys_id></div>
+            <div data-short_description></div>
+        </div>
+    </div>
+    </template>
+</div>]]></template>
+    </sp_widget>
+</record_update>

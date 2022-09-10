@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css>
-html,body {
+        <css>html,body {
 	background: #f6f5f7;
 	font-family: 'Montserrat', sans-serif;
   margin: 0 !important;
   scroll-behavior: smooth !important;
 }
+.padding-top{
+padding-top: 0 !important;
+}
 .blur{
 backdrop-filter: blur(1px);
+}
+.col-md-12{
+
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+
 }</css>
         <draft>false</draft>
         <dynamic_title_structure/>

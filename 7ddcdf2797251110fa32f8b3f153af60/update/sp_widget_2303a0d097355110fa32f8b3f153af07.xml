@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
+        <client_script><![CDATA[api.controller=function($rootScope, $scope) {
   /* widget controller */
   var c = this;
+
+  $scope.sectionOne = function () {
+    var value = document.getElementById('sectionOne');
+    $rootScope.$broadcast('bannerValue', value)
+    
+  }
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>* {
@@ -14,20 +20,30 @@ h1 {
 	margin-top: 10;
 }
 .column {
+
   float: left;
-  width: 50%;
   padding: 10px;
   margin-top: 10px;
-}
 
+}
+.left{
+width: 50%;
+min-width: 50% !important;
+}
+.right{
+width: 50%;
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
+
+
 }
 img{
-
+	width: 100%;
+	height: auto;
 }
 .container {
 	background-color: #FFFFFF;
@@ -37,18 +53,30 @@ img{
 	position: relative;
 	overflow: hidden;
 	width: 90%;
-	max-width: 100%;
 	min-height: 480px;
 	height: 80vh;
-	margin-bottom: 50px;
-	margin-top: 50px;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 70px;
+	margin-left: 70px !important;
+
 }
 //asd
 .form-container {
 	position: absolute;
 	top: 0;
 }
-</css>
+.landingPageHeader{
+	margin-top: 25%;
+	color: #6a6a6a;
+}
+.firstName{
+	margin-left: 75px;
+}
+.lastName{
+	margin-right: 75px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -80,30 +108,16 @@ img{
         <sys_update_name>sp_widget_2303a0d097355110fa32f8b3f153af07</sys_update_name>
         <template><![CDATA[<div class="container" id="container">
   <div class="form-container sign-up-container">
-    <img src="sn_logo.png" width="192" height="52"/>
+    
     <div class="row">
-      <div class="column">
-          <h1>Hello, {{data.firstName}}</h1>
-          <h3>Inspiring landing page text</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-          
-          Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+      <div class="column left">
+          <h3 class="landingPageHeader">Hello there, {{data.firstName}} ! I'm</h3>
         <div>
-            <h3>Latest posts</h3>
-
-            
+          <button class="ghost goDownButton" ng-click="sectionOne()">TEST button</button> 
         </div>
       </div>
-      <div class="column">
-        <img src="memojivalk.png" width="500" height="500"/>
+      <div class="column right">
+        <img src="memojiself.jpg"/>
       </div>
     </div>
   </div>
