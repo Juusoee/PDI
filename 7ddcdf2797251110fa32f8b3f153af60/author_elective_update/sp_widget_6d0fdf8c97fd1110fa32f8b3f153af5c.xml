@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.bodyWidget{&#13;
+position: fixed;&#13;
+top: 50%;&#13;
+left: 50%;&#13;
+transform: translate(-50%, -50%)&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_body_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>pdi_body_widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 07:58:30</sys_created_on>
+        <sys_id>6d0fdf8c97fd1110fa32f8b3f153af5c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>pdi_body_widget</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_6d0fdf8c97fd1110fa32f8b3f153af5c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 08:02:07</sys_updated_on>
+        <template><![CDATA[<div class="bodyWidget">
+<!-- your widget template -->
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>sp_widget_6d0fdf8c97fd1110fa32f8b3f153af5c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.bodyWidget{&amp;#13;
+position: fixed;&amp;#13;
+top: 50%;&amp;#13;
+left: 50%;&amp;#13;
+transform: translate(-50%, -50%)&amp;#13;
+}&amp;#13;
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;pdi_body_widget&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;pdi_body_widget&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-09-03 07:58:30&lt;/sys_created_on&gt;&lt;sys_id&gt;6d0fdf8c97fd1110fa32f8b3f153af5c&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;pdi_body_widget&lt;/sys_name&gt;&lt;sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60"&gt;7ddcdf2797251110fa32f8b3f153af60&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="PDI"&gt;7ddcdf2797251110fa32f8b3f153af60&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_6d0fdf8c97fd1110fa32f8b3f153af5c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-09-03 08:02:07&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="bodyWidget"&gt;
+&lt;!-- your widget template --&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>681909410</payload_hash>
+        <record_name>pdi_body_widget</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 08:02:07</sys_created_on>
+        <sys_id>62df130097315110fa32f8b3f153af48</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>183025f0f6d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 08:02:07</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>6adf13004f315110cacec418baa88447</update_guid>
+        <update_guid_history>6adf13004f315110cacec418baa88447:681909410,650fdf8c03fd1110a538592c38f7d15f:25498911</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="pdi_body_widget">6f00670097315110fa32f8b3f153af3b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 08:03:01</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>82533f50b7534c98a5e5b6359afcb110</sys_id>
+        <sys_metadata>6d0fdf8c97fd1110fa32f8b3f153af5c</sys_metadata>
+        <sys_name>pdi_body_widget</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>sp_widget_6d0fdf8c97fd1110fa32f8b3f153af5c</sys_update_name>
+        <sys_update_version display_value="sp_widget_6d0fdf8c97fd1110fa32f8b3f153af5c">62df130097315110fa32f8b3f153af48</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

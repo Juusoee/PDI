@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>function.js</name>
+        <script><![CDATA[$(document).ready(function() {
+
+  // Sticky menu
+  var menuTop = $('nav ul').offset().top;
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > menuTop) {
+      $('nav ul').css({
+        position: 'fixed',
+        top: '0px',
+        width: "calc(100% - 10%)",
+        height: "75px",
+        fontSize: "15px"
+      });
+    } else {
+      $('nav ul').css({
+        position: 'static',
+        top: '0px',
+        width: "100%",
+        height: "100px",
+        fontSize: "18px"
+      });
+    }
+    if ($(window).scrollTop() > 2200) {
+      $('nav ul').hide();
+    } else {
+      $('nav ul').show();
+    }
+  });
+
+  // Smooth scroll
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 75 // 75 is fixed nav height
+        }, 500);
+        return false;
+      }
+    }
+  });
+
+  // Header fadeIn fadeOut
+  $(".header-container img").css("opacity", "1");
+  setTimeout(function() {
+    $(".header-container h1, .header-container p,.header-container a").css("opacity", "1");
+  }, 1000);
+
+});]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 12:19:19</sys_created_on>
+        <sys_id>bd9adc5897f15110fa32f8b3f153afb2</sys_id>
+        <sys_name>function.js</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sys_ui_script_bd9adc5897f15110fa32f8b3f153afb2</sys_update_name>
+        <ui_type>10</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

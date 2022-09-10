@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css>html,body {
+        <css>body {
 	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-  margin: 0 !important;
-  scroll-behavior: smooth !important;
+	height: 100vh;
+	margin: -20px 0 50px;
 }
-.padding-top{
-padding-top: 0 !important;
+.loginWidget{
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%)
 }
-.blur{
-backdrop-filter: blur(1px);
-}
-.col-md-12{
-
-  padding-left: 0rem !important;
-  padding-right: 0rem !important;
-
-}</css>
+</css>
         <draft>false</draft>
         <dynamic_title_structure/>
-        <id>pdi_home</id>
+        <id>pdi_login</id>
         <internal>false</internal>
         <omit_watcher>false</omit_watcher>
         <public>false</public>
@@ -30,15 +29,15 @@ backdrop-filter: blur(1px);
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-09-01 19:04:20</sys_created_on>
-        <sys_id>292423ef97251110fa32f8b3f153af8a</sys_id>
-        <sys_name>pdi_home</sys_name>
+        <sys_created_on>2022-09-02 13:23:18</sys_created_on>
+        <sys_id>c7bfdb3b97211110fa32f8b3f153af8d</sys_id>
+        <sys_name>pdi_login</sys_name>
         <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
         <sys_policy/>
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
-        <sys_update_name>sp_page_292423ef97251110fa32f8b3f153af8a</sys_update_name>
-        <title>PDI-home</title>
+        <sys_update_name>sp_page_c7bfdb3b97211110fa32f8b3f153af8d</sys_update_name>
+        <title>PDI-login</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
-    <sys_translated_text action="delete_multiple" query="documentkey=292423ef97251110fa32f8b3f153af8a"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=c7bfdb3b97211110fa32f8b3f153af8d"/>
 </record_update>

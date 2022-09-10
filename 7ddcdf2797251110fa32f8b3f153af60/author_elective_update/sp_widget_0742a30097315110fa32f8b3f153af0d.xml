@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+    /* widget controller */
+    var c = this;
+
+    $(".main").onepage_scroll();
+
+  };]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+section {
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 2;
+  font-family: 'Lato', "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3", sans-serif;
+  font-weight: bold;
+}
+
+section:nth-child(1) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8656/2a8e112e1dfc2652.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(2) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8691/c55126189e47f95d.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -150px;
+}
+
+section:nth-child(3) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8766/336fbca014308de6.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}
+
+section:nth-child(4) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8780/b3f3ad03e7b9b94d.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(5) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8790/03eb8cb7f8ba5609.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -100px;
+}
+
+section:nth-child(6) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8823/772c0fc9a2046c5a.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -100px;
+}
+
+section:nth-child(7) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8833/6fb780e9098f3762.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -300px;
+}
+
+section:nth-child(8) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8840/6596e37e2ad9ed12.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -400px;
+}
+
+section:nth-child(9) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9002/e18cd0afb7aaed5c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(10) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9019/63ff0dc4c65bfb4c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}
+
+section:nth-child(11) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9107/84ff5cea3cce7ac3.jpg);
+  background-size: cover, cover;
+}
+
+section:nth-child(12) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9460/a386774f33cb2f1c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(13) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9478/c2443a4b8df09605.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(14) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9496/38b970736535ca96.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_spa</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>pdi_spa</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 08:12:48</sys_created_on>
+        <sys_id>0742a30097315110fa32f8b3f153af0d</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_0742a30097315110fa32f8b3f153af0d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:23:26</sys_updated_on>
+        <template><![CDATA[<div class="main">
+    <section>
+      <h1>圈入準 & Ab Yeh</h1>
+    </section>
+    <section>
+      <h1>LURE 露兒</h1>
+    </section>
+    <section>
+      <h1>蔡承派</h1>
+    </section>
+    <section>
+      <h1>Agy Ker & Shinway</h1>
+    </section>
+    <section>
+      <h1>Familybros：家 & 凱蒂</h1>
+    </section>
+    <section>
+      <h1>Wednesday & 吹斯達</h1>
+    </section>
+    <section>
+      <h1>黃秋森</h1>
+    </section>
+    <section>
+      <h1>崔維蘇</h1>
+    </section>
+    <section>
+      <h1>Jack Chiu & YUNA♥</h1>
+    </section>
+    <section>
+      <h1>A. Enough</h1>
+    </section>
+    <section>
+      <h1>Adam SU</h1>
+    </section>
+    <section>
+      <h1>P & H</h1>
+    </section>
+    <section>
+      <h1>Fei</h1>
+    </section>
+    <section>
+      <h1>Felix</h1>
+    </section>
+    </div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>sp_widget_0742a30097315110fa32f8b3f153af0d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+    /* widget controller */
+    var c = this;
+
+    $(".main").onepage_scroll();
+
+  };]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+section {
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 2;
+  font-family: 'Lato', "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3", sans-serif;
+  font-weight: bold;
+}
+
+section:nth-child(1) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8656/2a8e112e1dfc2652.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(2) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8691/c55126189e47f95d.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -150px;
+}
+
+section:nth-child(3) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8766/336fbca014308de6.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}
+
+section:nth-child(4) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8780/b3f3ad03e7b9b94d.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(5) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8790/03eb8cb7f8ba5609.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -100px;
+}
+
+section:nth-child(6) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8823/772c0fc9a2046c5a.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -100px;
+}
+
+section:nth-child(7) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8833/6fb780e9098f3762.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -300px;
+}
+
+section:nth-child(8) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/8840/6596e37e2ad9ed12.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -400px;
+}
+
+section:nth-child(9) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9002/e18cd0afb7aaed5c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(10) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9019/63ff0dc4c65bfb4c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}
+
+section:nth-child(11) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9107/84ff5cea3cce7ac3.jpg);
+  background-size: cover, cover;
+}
+
+section:nth-child(12) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9460/a386774f33cb2f1c.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(13) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9478/c2443a4b8df09605.jpg);
+  background-size: cover, cover;
+  background-position: center center, center center;
+}
+
+section:nth-child(14) { 
+  background: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%), url(http://assets02.dappei.com/uploads/photo/image/9496/38b970736535ca96.jpg);
+  background-size: cover, cover;
+  background-position: center center, center -200px;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;pdi_spa&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;pdi_spa&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-09-03 08:12:48&lt;/sys_created_on&gt;&lt;sys_id&gt;0742a30097315110fa32f8b3f153af0d&lt;/sys_id&gt;&lt;sys_mod_count&gt;36&lt;/sys_mod_count&gt;&lt;sys_name&gt;pdi_spa&lt;/sys_name&gt;&lt;sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60"&gt;7ddcdf2797251110fa32f8b3f153af60&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="PDI"&gt;7ddcdf2797251110fa32f8b3f153af60&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_0742a30097315110fa32f8b3f153af0d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-09-03 09:23:26&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="main"&gt;
+    &lt;section&gt;
+      &lt;h1&gt;圈入準 &amp; Ab Yeh&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;LURE 露兒&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;蔡承派&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Agy Ker &amp; Shinway&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Familybros：家 &amp; 凱蒂&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Wednesday &amp; 吹斯達&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;黃秋森&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;崔維蘇&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Jack Chiu &amp; YUNA♥&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;A. Enough&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Adam SU&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;P &amp; H&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Fei&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Felix&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1599060404</payload_hash>
+        <record_name>pdi_spa</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:23:26</sys_created_on>
+        <sys_id>257277c097715110fa32f8b3f153afce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18302a9819d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:23:26</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>2d7277c0df7151108718f130d732dbcd</update_guid>
+        <update_guid_history>2d7277c0df7151108718f130d732dbcd:1599060404,ff02bb80a2715110ba91e4b986a66fee:777883031,33f1fb8081715110915507a5a9880724:1555668787,d2f1fb8097715110c98e968b44d2001f:714597044,0d9deb8c13315110f098f7ffbd06a11e:-1999861863,457d234ceb315110f4c52b31b57f9b25:-1536709684,3f5de78c4a31511084aba1e942132ab9:-1744112599,f84d234cbc31511056bfe70c528cc020:2079696813,c28c6b4cda315110b164bf9e81ffaa11:1591712704,5a6c6b4cc8315110edb59c6cbb84b60c:-33743296,866ce34c0a3151108b0793e44176c96e:849041017,316ce34c17315110c671e0ff08fb3627:-235251581,310ce34c44315110dac3db6b1f4e3922:239261963,d90ce34ca83151103325d5b673977a68:-1397023706,904ae7c8a231511067a6f02e3d9fc07d:-2043319174,0b1ae308b63151101ed68d80de6a4f0c:-1914083519,321a63489b315110efb8c932fe3c7776:1962575259,bef7ab0870315110578fa6777379d642:1725188745,25b62bc40e3151102144c27e1692ffb0:1643628448,5a96efc4de315110e7d42c79a02ffbde:701551351,ed86a7c48231511086b0371902f262fe:-1514803790,d5562fc4e2315110d13962dd533c0faf:179752039,c436e7c42d315110b55496491debbd07:648296960,e3162bc427315110bda3a79656c107a7:2094458805,6ff5a7c4f4315110e55fcc6e1ff8ddf3:-2015703649,82e5ab44a33151103d140d91fc2d1d8e:730768444,8c45a744273151105a1db7c6ecb49f1a:-41242327,a025a74470315110052a8bcd4d5eb416:-94949192,87f4a74499315110e1956f12aebdaa11:-358134820,ecb4e704473151106468369b1a95256c:2103390957,b5a42344f63151108235f11d9985d564:-997543187,db946f04953151104c52fa0de03047ca:1522994070,14746f0416315110cab033d6043f0ec2:-983099873,0434a704d3315110690df23f424dba8b:1324782976,89e32bc0373151105de2d920d6c57097:1143924175,689363c007315110bc191e1328831eda:-15360621,8b42a3002a315110e2558df3fd4e890e:-374672952</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="pdi_spa">9324bf0497715110fa32f8b3f153af9e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:30:55</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>c364647bcc2e43faacfa1c34cd5d8304</sys_id>
+        <sys_metadata>0742a30097315110fa32f8b3f153af0d</sys_metadata>
+        <sys_name>pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>sp_widget_0742a30097315110fa32f8b3f153af0d</sys_update_name>
+        <sys_update_version display_value="sp_widget_0742a30097315110fa32f8b3f153af0d">257277c097715110fa32f8b3f153afce</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="DELETE">
+        <order>100</order>
+        <sp_dependency display_value="templateDependencies">1dba80d897b15110fa32f8b3f153af48</sp_dependency>
+        <sp_js_include display_value="jquery.min.js">fc7b001c97b15110fa32f8b3f153af83</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:13:13</sys_created_on>
+        <sys_id>f59bc0d897b15110fa32f8b3f153afe2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>templateDependencies.jquery.min.js</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_f59bc0d897b15110fa32f8b3f153afe2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 11:13:13</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>m2m_sp_dependency_js_include_f59bc0d897b15110fa32f8b3f153afe2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include"><m2m_sp_dependency_js_include action="INSERT_OR_UPDATE"><order>100</order><sp_dependency display_value="templateDependencies">1dba80d897b15110fa32f8b3f153af48</sp_dependency><sp_js_include display_value="jquery.min.js">fc7b001c97b15110fa32f8b3f153af83</sp_js_include><sys_class_name>m2m_sp_dependency_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-09-03 11:13:13</sys_created_on><sys_id>f59bc0d897b15110fa32f8b3f153afe2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>templateDependencies.jquery.min.js</sys_name><sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package><sys_policy/><sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope><sys_update_name>m2m_sp_dependency_js_include_f59bc0d897b15110fa32f8b3f153afe2</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-09-03 11:13:13</sys_updated_on></m2m_sp_dependency_js_include></record_update>]]></payload>
+        <payload_hash>1297190143</payload_hash>
+        <record_name>templateDependencies.jquery.min.js</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:13:13</sys_created_on>
+        <sys_id>759bc0d897b15110fa32f8b3f153afe4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>183030e03f20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 11:13:13</sys_updated_on>
+        <type>Dependency JS Includes</type>
+        <update_guid>bd9bc0d843b151105c2612bb84359ee3</update_guid>
+        <update_guid_history>bd9bc0d843b151105c2612bb84359ee3:1297190143</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="templateDependencies.jquery.min.js">7a015c5097f15110fa32f8b3f153afe8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:37:03</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_dependency_js_include">m2m_sp_dependency_js_include</sys_db_object>
+        <sys_id>24e1e1ada0d849a88324a66480d89040</sys_id>
+        <sys_metadata>f59bc0d897b15110fa32f8b3f153afe2</sys_metadata>
+        <sys_name>templateDependencies.jquery.min.js</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>m2m_sp_dependency_js_include_f59bc0d897b15110fa32f8b3f153afe2</sys_update_name>
+        <sys_update_version display_value="m2m_sp_dependency_js_include_f59bc0d897b15110fa32f8b3f153afe2">759bc0d897b15110fa32f8b3f153afe4</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

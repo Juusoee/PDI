@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function ($scope, $window, $document, $rootScope) {
+	/* widget controller */
+	var c = this;
+
+	/**
+	 * ROOTSCOPE NAVIGATION FROM BANNER BUTTON
+	 * @{param1} Default parameter, event
+	 * @{param2} Parameter from button press in this case, sectionOne element.
+	 * Value passed from Widget pdi_banner_picture => client script with $broadcast
+	 */
+	$rootScope.$on("bannerValue", function (event, data) {
+		c.data.section = data;
+		data.scrollIntoView(
+			{ behavior: "smooth", block: "end", inline: "nearest" },
+			500
+		);
+	});
+
+	/**
+	 * NAVIGATION
+	 *  Functions to handle navigation.
+     *  Gets Value from proper Section element and scrolls to nearest inline
+     *  You can add mode navigation elements, remember add scss as well.
+	 */
+	$scope.changeSectionOne = function () {
+		var element = document.getElementById("sectionOne");
+		element.scrollIntoView(
+			{ behavior: "smooth", block: "end", inline: "nearest" },
+			500
+		);
+	};
+	$scope.changeSectionTwo = function () {
+		var element = document.getElementById("sectionTwo");
+		element.scrollIntoView(
+			{ behavior: "smooth", block: "end", inline: "nearest" },
+			500
+		);
+	};
+	$scope.changeSectionThree = function () {
+		var element = document.getElementById("sectionThree");
+		element.scrollIntoView(
+			{ behavior: "smooth", block: "end", inline: "nearest" },
+			500
+		);
+	};
+    $scope.changeSectionWelcome = function () {
+        var element = document.getElementById("sectionWelcome");
+		element.scrollIntoView(
+			{ behavior: "smooth", block: "start"},
+			500
+		);
+    }
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.page-wrapper {
+  display: block;
+  width: calc(100% - 10%);
+  margin: 0 auto;
+}
+.content-wrapper {
+  background: #fff;
+  width: 100%;
+  height: auto;
+}
+/* ----- SECTION01 ----- */
+.section01 {
+  padding: 8% 8%;
+  border-bottom: 1px solid #CDCDCD;
+  height: 100vh;
+}
+.section01-container {
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- SECTION02 ----- */
+.section02 {
+  padding: 8% 8%;
+  border-bottom: 1px solid #CDCDCD;
+  height: 100vh;
+}
+.section02-container {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: #767676;
+}
+/* ----- SECTION03 ----- */
+.section03 {
+  padding: 8% 8%;
+  border-bottom: 1px solid #CDCDCD;
+  height: 100vh;
+}
+.section03-container {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: #767676;
+}
+/* ----- SECTION03 CATEGORY AND CONTENT LAYOUT &amp;  ----- */
+
+#catalogLayout{
+ 
+  width: 100%;
+  height: 100%
+}
+#category{
+  
+  width: 15%;
+  vertical-align: top;
+}
+#content{
+  
+  width: 85%;
+  vertical-align: top;
+}
+
+.bannerHello {
+  align-items: center;
+  height: 100vh;
+  
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+   
+  
+    li {
+      list-style: none;
+      margin-right: 65px;
+      font-size: 25px;
+      font-weight: bold;
+      display:flex;
+      a {
+        text-decoration: none;
+      }
+      a:active{
+        transform: scale(0.95) !important;
+        color: #CDCDCD !important;
+      }
+      a:hover{
+        color: #CDCDCD !important;
+      }
+    }
+  }
+}
+.bannerLogo{
+  position: absolute;
+  left: 0;
+  margin-left: 70px;
+}
+
+section {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  background: #E9E9E9 !important;
+}
+
+
+button {
+  margin-top: 5px;
+	border-radius: 20px;
+	border: 1px solid #99D3DF !important;
+	background-color: #99D3DF !important;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95) !important;
+}
+button:hover{
+  background-color: #88BBD6 !important;
+}
+button:focus {
+  border-radius: 20px !important;
+	outline: none !important;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_spa</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+
+	var $window = $injector.get("$window");
+	
+// 	$window.document.addEventListener("scroll", function(){
+// 		console.log('halloota')
+// 	})
+	
+	// $($window.document).ready(function(){
+	// 	$("section").scroll(function(){
+	// 		var element = document.getElementById('second-section')
+    // 		element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}, 50000);
+	// 	})
+	// })
+	
+}
+
+ ]]></link>
+        <name>pdi_spa</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  /**
+   * Server Call for Widget pdi_banner_picture
+   */
+  data.banner = $sp.getWidget('pdi_banner_picture', {});
+  
+  data.category = $sp.getWidget('pdi_sc_categories', {})
+
+  data.content = $sp.getWidget('pdi_sc_category_page', {})
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:31:11</sys_created_on>
+        <sys_id>07343f0097715110fa32f8b3f153af1a</sys_id>
+        <sys_name>pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_07343f0097715110fa32f8b3f153af1a</sys_update_name>
+        <template><![CDATA[<html>
+  <body>
+    <!--BANNED WIDGET IMPORT WITH HELLO & SECTION STARTS HERE-->
+    <div class="bannerHello" id="sectionWelcome">
+      <sp-widget widget="data.banner"></sp-widget>
+    </div>
+
+    <!--BANNED WIDGET IMPORT WITH HELLO &SECTION ENDS HERE-->
+    <!--NAVIGATION STARTS HERE-->
+    <nav>
+      <ul>
+        <!--BANNER LOGO-->
+        <li class="bannerLogo">
+          <a ng-click="changeSectionWelcome()"
+            ><img src="sn_logo.png" width="96" height="26"
+          /></a>
+        </li>
+        <!---NAVIGATION LI ELEMENTS, PASS ng-click function-->
+        <li><a ng-click="changeSectionOne()">First</a></li>
+        <li><a ng-click="changeSectionTwo()">Second</a></li>
+        <li><a ng-click="changeSectionThree()">Third</a></li>
+      </ul>
+    </nav>
+    <!--NABIGATION ENDS HERE-->
+    <div class="page-wrapper">
+      <div class="content-wrapper">
+        <!--SECTION ONE STARTS HERE-->
+        <section class="section01" id="sectionOne">
+          <div class="section01-container">SECTION 1</div>
+        </section>
+        <!--SECTION ONE ENDS HERE-->
+        <!--SECTION TWO STARST HERE-->
+        <section class="section02" id="sectionTwo">
+          <div class="section02-container">SECTION 2</div>
+        </section>
+        <!--SECTION TWO ENDS HERE-->
+        <!--SECTION THREE STARTS HERE-->
+        <section class="section03" id="sectionThree">
+          <div id="catalogLayout">
+            <!--
+            <div id="category">
+              <sp-widget widget="data.category"></sp-widget>
+            </div>
+            <div id="content">
+              <sp-widget widget="data.content"></sp-widget>
+            </div>
+        </section>
+        -->
+        <!--SECTION THREE ENDS HERE-->
+      </div>
+    </div>
+  </body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

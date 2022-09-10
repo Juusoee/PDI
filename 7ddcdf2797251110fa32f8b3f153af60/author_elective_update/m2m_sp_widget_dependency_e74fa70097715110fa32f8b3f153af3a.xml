@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="function.js">ca2fe30097715110fa32f8b3f153afd3</sp_dependency>
+        <sp_widget display_value="pdi_spa">0742a30097315110fa32f8b3f153af0d</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:09:39</sys_created_on>
+        <sys_id>e74fa70097715110fa32f8b3f153af3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>function.js.pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_e74fa70097715110fa32f8b3f153af3a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:09:39</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>m2m_sp_widget_dependency_e74fa70097715110fa32f8b3f153af3a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="function.js">ca2fe30097715110fa32f8b3f153afd3</sp_dependency><sp_widget display_value="pdi_spa">0742a30097315110fa32f8b3f153af0d</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-09-03 09:09:39</sys_created_on><sys_id>e74fa70097715110fa32f8b3f153af3a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>function.js.pdi_spa</sys_name><sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package><sys_policy/><sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope><sys_update_name>m2m_sp_widget_dependency_e74fa70097715110fa32f8b3f153af3a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-09-03 09:09:39</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>1126010270</payload_hash>
+        <record_name>function.js.pdi_spa</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:09:39</sys_created_on>
+        <sys_id>af4fa70097715110fa32f8b3f153af3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>183029ce1a90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 09:09:39</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>e74fa700ed7151100dfa037a7778833c</update_guid>
+        <update_guid_history>e74fa700ed7151100dfa037a7778833c:1126010270</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="function.js.pdi_spa">1070f74097715110fa32f8b3f153afba</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 09:14:37</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>3533a6aa4b57425091a2008eeab03890</sys_id>
+        <sys_metadata>e74fa70097715110fa32f8b3f153af3a</sys_metadata>
+        <sys_name>function.js.pdi_spa</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_e74fa70097715110fa32f8b3f153af3a</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_e74fa70097715110fa32f8b3f153af3a">af4fa70097715110fa32f8b3f153af3c</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name>loginContainer</container_class_name>
+        <name>PDI-login - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="pdi_login">c7bfdb3b97211110fa32f8b3f153af8d</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-02 13:27:10</sys_created_on>
+        <sys_id>86a02ff797211110fa32f8b3f153af82</sys_id>
+        <sys_name>PDI-login - Container 1</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_container_86a02ff797211110fa32f8b3f153af82</sys_update_name>
+        <title/>
+        <width>container-fluid</width>
+    </sp_container>
+</record_update>

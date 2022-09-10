@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_css_include">
+    <m2m_sp_dependency_css_include action="DELETE">
+        <order>100</order>
+        <sp_css_include display_value="bootstrap-icons.css">91fb881c97b15110fa32f8b3f153aff4</sp_css_include>
+        <sp_dependency display_value="templateDependencies">1dba80d897b15110fa32f8b3f153af48</sp_dependency>
+        <sys_class_name>m2m_sp_dependency_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:15:21</sys_created_on>
+        <sys_id>3c1cc41c97b15110fa32f8b3f153afd0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>bootstrap-icons.css.templateDependencies</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>m2m_sp_dependency_css_include_3c1cc41c97b15110fa32f8b3f153afd0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 11:15:21</sys_updated_on>
+    </m2m_sp_dependency_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</application>
+        <file_path/>
+        <instance_id>2d3d6b9ddb41cd10f37acac5059619f6</instance_id>
+        <instance_name>dev121073</instance_name>
+        <name>m2m_sp_dependency_css_include_3c1cc41c97b15110fa32f8b3f153afd0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_css_include"><m2m_sp_dependency_css_include action="INSERT_OR_UPDATE"><order>100</order><sp_css_include display_value="bootstrap-icons.css">91fb881c97b15110fa32f8b3f153aff4</sp_css_include><sp_dependency display_value="templateDependencies">1dba80d897b15110fa32f8b3f153af48</sp_dependency><sys_class_name>m2m_sp_dependency_css_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-09-03 11:15:21</sys_created_on><sys_id>3c1cc41c97b15110fa32f8b3f153afd0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>bootstrap-icons.css.templateDependencies</sys_name><sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package><sys_policy/><sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope><sys_update_name>m2m_sp_dependency_css_include_3c1cc41c97b15110fa32f8b3f153afd0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-09-03 11:15:21</sys_updated_on></m2m_sp_dependency_css_include></record_update>]]></payload>
+        <payload_hash>1831882838</payload_hash>
+        <record_name>bootstrap-icons.css.templateDependencies</record_name>
+        <reverted_from/>
+        <source>5ddf5b6b97251110fa32f8b3f153af24</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:15:21</sys_created_on>
+        <sys_id>301c4c1c97b15110fa32f8b3f153af2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>183030ff6060000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-03 11:15:21</sys_updated_on>
+        <type>Dependency CSS Includes</type>
+        <update_guid>f41cc41c31b151101eaf9ba72b052dd2</update_guid>
+        <update_guid_history>f41cc41c31b151101eaf9ba72b052dd2:1831882838</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="bootstrap-icons.css.templateDependencies">66015c5097f15110fa32f8b3f153afa4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:37:02</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_dependency_css_include">m2m_sp_dependency_css_include</sys_db_object>
+        <sys_id>7e8ec7facd514e008d34f45f23cd08a4</sys_id>
+        <sys_metadata>3c1cc41c97b15110fa32f8b3f153afd0</sys_metadata>
+        <sys_name>bootstrap-icons.css.templateDependencies</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_scope_delete display_value="">02429fd6d48c455887e288446e067a40</sys_scope_delete>
+        <sys_update_name>m2m_sp_dependency_css_include_3c1cc41c97b15110fa32f8b3f153afd0</sys_update_name>
+        <sys_update_version display_value="m2m_sp_dependency_css_include_3c1cc41c97b15110fa32f8b3f153afd0">301c4c1c97b15110fa32f8b3f153af2b</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

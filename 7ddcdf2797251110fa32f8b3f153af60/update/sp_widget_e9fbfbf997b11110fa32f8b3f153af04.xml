@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $timeout) {
+	$scope.version = "scrollToTopBtn3";
+	$scope.scrollFunction = function(e)	{
+		if (e.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			try{
+				document.getElementById($scope.version).classList.add('show');
+				$scope.$emit("ta_scrolling",e);
+			}catch(e1){console.warn("595:" + e1.message);}
+		} else {
+			try{
+				document.getElementById($scope.version).classList.remove('show');
+			}catch(e2){console.warn("600:" + e2.message);}
+		}
+	};
+	$scope.setScrollListener = function() {
+		var section = document.getElementsByTagName('section')[0];
+		if (section) {
+			section.onscroll = function() {
+				$scope.scrollFunction(section);
+			};
+		} else {console.warn("No section found from $scope.setScrollListener function");}
+	};
+	$scope.topFunction = function() {
+		var section = document.getElementsByTagName('section')[0];
+		if (section) {
+			section.scrollTop = 0;
+		} else {console.warn("No section found from $scope.topFunction function");}
+	};
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.scroll-top-wrapper {
+  opacity:0;
+  width:50px;
+  right:30px;
+  height:50px;
+  bottom:30px;
+  color:#eee;
+  padding-top:2px;
+  z-index:99999999;
+  line-height:48px;
+  visibility:hidden;
+  background-color:#777;
+  transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+  -ms-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -webkit-transition:all .5s ease-in-out;
+  border-radius:5px
+}
+.scroll-top-wrapper:hover {
+  background-color:#888
+}
+.scroll-top-wrapper.show {
+  visibility:visible;
+  cursor:pointer;
+  opacity:1
+}
+.scroll-top-wrapper i.fa {
+  line-height:inherit
+}
+.cc_container,
+.scroll-top-wrapper {
+  position:fixed;
+  overflow:hidden;
+  text-align:center
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>test</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>test</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-08 20:34:19</sys_created_on>
+        <sys_id>e9fbfbf997b11110fa32f8b3f153af04</sys_id>
+        <sys_name>test</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_e9fbfbf997b11110fa32f8b3f153af04</sys_update_name>
+        <template><![CDATA[<div ng-init="setScrollListener()" id="{{version}}" class="scroll-top-wrapper" ng-click="topFunction()">
+  <span class="scroll-top-inner">
+    <i class="fa fa-2x fa-arrow-circle-up">asd</i>
+  </span>
+</div>]]></template>
+    </sp_widget>
+</record_update>

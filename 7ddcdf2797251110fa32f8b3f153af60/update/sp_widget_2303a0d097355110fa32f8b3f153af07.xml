@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($rootScope, $scope) {
+  /* widget controller */
+  var c = this;
+
+  $scope.sectionOne = function () {
+    var value = document.getElementById('sectionOne');
+    $rootScope.$broadcast('bannerValue', value)
+    
+  }
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {
+  box-sizing: border-box;
+}
+h1 {
+	font-weight: bold;
+	margin-top: 10;
+}
+.column {
+
+  float: left;
+  padding: 10px;
+  margin-top: 10px;
+
+}
+.left{
+width: 50%;
+min-width: 50% !important;
+}
+.right{
+width: 50%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+
+
+}
+img{
+	width: 100%;
+	height: auto;
+}
+.container {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 90%;
+	min-height: 480px;
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 70px;
+	margin-left: 70px !important;
+
+}
+//asd
+.form-container {
+	position: absolute;
+	top: 0;
+}
+.landingPageHeader{
+	margin-top: 25%;
+	color: #6a6a6a;
+}
+.firstName{
+	margin-left: 75px;
+}
+.lastName{
+	margin-right: 75px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pdi_banner_picture</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>pdi_banner_picture</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.firstName = gs.getUser().getFirstName();
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 12:56:23</sys_created_on>
+        <sys_id>2303a0d097355110fa32f8b3f153af07</sys_id>
+        <sys_name>pdi_banner_picture</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sp_widget_2303a0d097355110fa32f8b3f153af07</sys_update_name>
+        <template><![CDATA[<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    
+    <div class="row">
+      <div class="column left">
+          <h3 class="landingPageHeader">Hello there, {{data.firstName}} ! I'm</h3>
+        <div>
+          <button class="ghost goDownButton" ng-click="sectionOne()">TEST button</button> 
+        </div>
+      </div>
+      <div class="column right">
+        <img src="memojiself.jpg"/>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

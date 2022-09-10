@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>click-scroll.js</name>
+        <script><![CDATA[//jquery-click-scroll
+//by syamsul'isul' Arifin
+
+var sectionArray = [1, 2, 3, 4, 5];
+
+$.each(sectionArray, function(index, value){
+          
+     $(document).scroll(function(){
+         var offsetSection = $('#' + 'section_' + value).offset().top - 90;
+         var docScroll = $(document).scrollTop();
+         var docScroll1 = docScroll + 1;
+         
+        
+         if ( docScroll1 >= offsetSection ){
+             $('.navbar-nav .nav-item .nav-link').removeClass('active');
+             $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');  
+             $('.navbar-nav .nav-item .nav-link').eq(index).addClass('active');
+             $('.navbar-nav .nav-item .nav-link').eq(index).removeClass('inactive');
+         }
+         
+     });
+    
+    $('.click-scroll').eq(index).click(function(e){
+        var offsetClick = $('#' + 'section_' + value).offset().top - 90;
+        e.preventDefault();
+        $('html, body').animate({
+            'scrollTop':offsetClick
+        }, 300)
+    });
+    
+});
+
+$(document).ready(function(){
+    $('.navbar-nav .nav-item .nav-link:link').addClass('inactive');    
+    $('.navbar-nav .nav-item .nav-link').eq(0).addClass('active');
+    $('.navbar-nav .nav-item .nav-link:link').eq(0).removeClass('inactive');
+});]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-03 11:11:20</sys_created_on>
+        <sys_id>0e1b48d897b15110fa32f8b3f153af36</sys_id>
+        <sys_name>click-scroll.js</sys_name>
+        <sys_package display_value="PDI" source="7ddcdf2797251110fa32f8b3f153af60">7ddcdf2797251110fa32f8b3f153af60</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
+        <sys_update_name>sys_ui_script_0e1b48d897b15110fa32f8b3f153af36</sys_update_name>
+        <ui_type>1</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>
