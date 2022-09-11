@@ -6,46 +6,203 @@
 	var c = this;
 
 	/**
-	 * Getters and setters
+	 * ${suggestions} stores Array of Objects form Server call
+	 * ${suggNames} stores Name attribute.
 	 */
-	var display = [];
-	var data = c.data.arrCatItem;
-	var useItemTemplate = document.querySelector("[data-item-template]");
-	var useItemDiv = document.querySelector("[data-item]");
-	var searchInput = document.querySelector("[data-search]");
+	var suggestions = c.data.arr;
+	var suggNames = [];
+	// Iterate ${suggestions} Array of objects, get obj.name and push it to ${suggNames} Array
+	suggestions.forEach(function (data) {
+		suggNames.push(data.name);
+	});
 
 	/**
-	 * Event listener for input
-	 * Filters out items that not match input
+	 * Get all required elements.
+	 * ${searchWrapper} stores div element with id of search-input.
+	 * ${inputBox} stores input element.
+	 * ${suggBox} stores div element with id of autocom-box.
+	 * ${icon} stores div element with id of icon.
+	 * ${linkTag} stores hidden anchor element
+	 * ${webLink} initialize for later use
 	 */
+	var searchWrapper = document.querySelector(".search-input");
+	var inputBox = searchWrapper.querySelector("input");
+	var suggBox = searchWrapper.querySelector(".autocom-box");
+	var icon = searchWrapper.querySelector(".icon");
+	var linkTag = searchWrapper.querySelector("a");
+	var webLink;
 
-	searchInput.addEventListener("input", function (e) {
-		var value = e.target.value.toLowerCase();
-		display.forEach(function (item) {
-			var isVisible = item.name.toLowerCase().includes(value) || item.shortDesc.toLowerCase().includes(value);
-			item.element.classList.toggle("hide", !isVisible);
-		});
-	});
 	/**
-	 * Handle promise, push object to array.
+	 * Function to listen user keyboard inputs on inputBox element.
+	 * ${userData} stores user input
+	 * ${emptyArray} initialize for later use
 	 */
-	data.forEach(function (item) {
-		var card = useItemTemplate.content.cloneNode(true).children[0];
-		var sys_id = card.querySelector("[data-sys_id]");
-		var name = card.querySelector("[data-name]");
-    var shortDesc = card.querySelector("[data-short_description]");
-		sys_id.textContent = item.sys_id;
-		name.textContent = item.name;
-    shortDesc.textContent = item.shortDesc;
-		useItemDiv.append(card);
-		display.push({ sys_id: item.sys_id, name: item.name, shortDesc: item.shortDesc, element: card });
-	});
+	inputBox.onkeyup = (e) => {
+		var userData = e.target.value;
+		var emptyArray = [];
+		/**
+		 * Check if input is given
+		 */
+		if (userData) {
+			/**
+			 * use filter method to loop Array ${suggNames} with names that includes
+			 * input in LowerCase and push to ${emptyArray}
+			 */
+			emptyArray = suggNames.filter((data) => {
+				return data.toLocaleLowerCase().includes(userData.toLocaleLowerCase());
+			});
+			/**
+			 * use map method to loop ${emptyArray} and return li elements
+			 */
+			emptyArray = emptyArray.map((data) => {
+				return (data = "<li>" + data + "</li>");
+			});
+			/**
+			 * Show autocomplete box and call showSuggestions function pass parameter ${emptyArray}
+			 *
+			 */
+			searchWrapper.classList.add("active");
+			showSuggestions(emptyArray);
+
+			/**
+			 * ${allList} stores all li elements from suffBox (search dropdown)
+			 * Loop trough results
+			 * Add onclick eventlistener to all li elements
+			 * Build link to redirect user to Catalot item on option click
+			 */
+			var allList = suggBox.querySelectorAll("li");
+			for (let i = 0; i < allList.length; i++) {
+				// Event listener
+				allList[i].addEventListener("click", function (e) {
+					// Set input field value with value that user selected from search dropdown
+					inputBox.value = allList[i].innerHTML;
+					// Hide Autocomplete (search dropdown)
+					searchWrapper.classList.remove("active");
+					/**
+					 * Function to find sys_id of searched item, which is stored in ${suggestions} Array of Objects
+					 * Build url and redirect user to link
+					 */
+					var getSysId = suggestions.findIndex(
+						(suggestion) => suggestion.name == inputBox.value
+					);
+					suggestions[getSysId].sys_id;
+					// Build url: Get instance url and add sys_id of cat_item
+					webLink =
+						window.location.href +
+						"?id=sc_cat_item&sys_id=" +
+						suggestions[getSysId].sys_id;
+					// Pass link to hidden anchor element ${linkTag}
+					linkTag.setAttribute("href", webLink);
+					// Click link to redirect and clear inputBox
+					linkTag.click();
+					inputBox.value = "";
+				});
+				// /**
+				//  * Function to handle click on mangifying glass
+				//  * Not in use ATM
+				//  */
+				// icon.onclick = () => {
+				// 	webLink = "https://www.google.com/search?q=" + userData;
+				// 	linkTag.setAttribute("href", webLink);
+				// 	console.log(webLink);
+				// 	linkTag.click();
+				// };
+			}
+		}
+	};
+
+	/**
+	 * Function to handle filtered list
+	 * @param {emptyArray} list Filtered array
+	 */
+	function showSuggestions(list) {
+		var listData;
+		if (!list.length) {
+			// Get input value
+			userValue = inputBox.value;
+			// Build suggestions
+			listData = "<li>" + userValue + "</li>";
+		} else {
+			// Clear list if no matches
+			listData = list.join("");
+		}
+		// Set  values on Autocomplete list
+		suggBox.innerHTML = listData;
+	}
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.card{
-    border: 1px solid black;
-}</css>
+        <css>
+  .wrapper{
+    max-width: 450px;
+    margin: 150px auto;
+  }
+  
+  .wrapper .search-input{
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+  }
+  
+  .search-input input{
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+  }
+  
+  .search-input.active input{
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  
+  .search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+  }
+  
+  .search-input.active .autocom-box li{
+    display: block;
+  }
+  .autocom-box li:hover{
+    background: #efefef;
+  }
+  
+  .search-input .icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #88BBD6;
+    cursor: pointer;
+  }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -62,7 +219,12 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-  data.arrCatItem = []
+
+  /**
+   * Build Array of Objects that can be used on user input queries
+   */
+
+  data.arr = []
   var gr = new GlideRecord('sc_cat_item')
   gr.addQuery('active', 'true')
   gr.query();
@@ -75,17 +237,22 @@
     })
   }
  
-  var kb = new GlideRecord('kb_knowledge')
-  kb.addQuery('workflow_state', 'published');
-  kb.query();
-  while(kb.next()){
-    data.arr.push({
-      "type": "kb_knowledge",
-      "shortDesc": kb.getValue('short_description'),
-      "sys_id": kb.getValue('sys_id'),
-      "name": kb.getValue('number')
-    })
-  }
+  /**
+   * WOIP
+   * Build additional Objects to use search functionality on multiple tables
+   * at the same time
+   */
+  // var kb = new GlideRecord('kb_knowledge')
+  // kb.addQuery('workflow_state', 'published');
+  // kb.query();
+  // while(kb.next()){
+  //   data.arr.push({
+  //     "type": "kb_knowledge",
+  //     "shortDesc": kb.getValue('short_description'),
+  //     "sys_id": kb.getValue('sys_id'),
+  //     "name": kb.getValue('number')
+  //   })
+  // }
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -97,20 +264,19 @@
         <sys_policy/>
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
         <sys_update_name>sp_widget_87dd7c2297355110fa32f8b3f153af02</sys_update_name>
-        <template><![CDATA[<div>
-    <div class="search-wrapper">
-        <label for="search">Search</label>
-        <input type="search" id="search" data-search>
+        <template><![CDATA[<div class="wrapper">
+  <div class="search-input">
+    <!-- HIDDEN ANCHOR ELEMENT, USED TO REDIRECT USE AFTER SEARCH -->
+    <a href="" target="_blank" hidden></a>
+    <!-- INPUT -->
+    <input type="text" placeholder="Type to search.." />
+    <!-- AUTOCOMPLETE DIV -->
+    <div class="autocom-box">
+      <!-- LI ELEMENTS WILL BE ADDED HERE -->
     </div>
-    <div data-item>
-    <template data-item-template>
-        <div class="card">
-            <div class="header" data-name></div>
-            <div class="body" data-sys_id></div>
-            <div data-short_description></div>
-        </div>
-    </div>
-    </template>
-</div>]]></template>
+    <div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
