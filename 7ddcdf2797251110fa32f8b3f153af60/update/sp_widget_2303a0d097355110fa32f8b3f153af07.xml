@@ -95,6 +95,7 @@ img{
         <script><![CDATA[(function() {
   data.firstName = gs.getUser().getFirstName();
 
+  data.search = $sp.getWidget('pdi_search', {})
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -106,19 +107,23 @@ img{
         <sys_policy/>
         <sys_scope display_value="PDI">7ddcdf2797251110fa32f8b3f153af60</sys_scope>
         <sys_update_name>sp_widget_2303a0d097355110fa32f8b3f153af07</sys_update_name>
-        <template><![CDATA[<div class="container" id="container">
+        <template><![CDATA[<div>
+  <sp-widget widget="data.search"></sp-widget>
+</div>
+<div class="container" id="container">
   <div class="form-container sign-up-container">
     
     <div class="row">
       <div class="column left">
-          <h3 class="landingPageHeader">Hello there, {{data.firstName}} ! I'm</h3>
+          <!-- <h3 class="landingPageHeader">Hello there, {{data.firstName}} ! I'm</h3>
         <div>
           <button class="ghost goDownButton" ng-click="sectionOne()">TEST button</button> 
-        </div>
+        </div> -->
+    
       </div>
-      <div class="column right">
+      <!-- <div class="column right">
         <img src="memojiself.jpg"/>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
